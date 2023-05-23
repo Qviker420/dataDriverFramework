@@ -12,7 +12,7 @@ public class MySqlJDCButil {
     public static Connection getConnection() throws SQLException {
         Connection conn = null;
 
-        try (FileInputStream f = new FileInputStream("C:\\Users\\chali\\TBC\\dataDriverFramework-homework\\DDT_Framework_HomeWork\\src\\main\\resources\\db.properties")) {
+        try (FileInputStream f = new FileInputStream("src/main/resources/db.properties")) {
 
             Properties pros = new Properties();
             pros.load(f);
