@@ -17,8 +17,7 @@ public class DbTest {
     @BeforeTest
     public void setup() {
         try (Connection conn = MySqlJDCButil.getConnection()) {
-            System.out.println(String.format("Connected to database %s "
-                    + "successfully.", conn.getCatalog()));
+            System.out.println(String.format("Connected to database %s " + "successfully.", conn.getCatalog()));
         }
         catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -33,8 +32,8 @@ public class DbTest {
         SelenideElement lastName = $(By.id("lastName"));
         SelenideElement phoneNumber = $(By.id("userNumber"));
 
-        String sql = "SELECT firstname, lastname, phone" +
-                "FROM students";
+        String sql = "SELECT * FROM dbo.[students]";
+
 
         try (Connection conn = MySqlJDCButil.getConnection();
              Statement stmt = conn.createStatement();
