@@ -16,7 +16,7 @@ public class DbTest {
 
     @BeforeTest
     public void setup() {
-        try (Connection conn = MySqlJDCButil.getConnection()) {
+        try (Connection conn = SQLConnectionStep.getConnection()) {
             System.out.println(String.format("Connected to database %s " + "successfully.", conn.getCatalog()));
         }
         catch (SQLException ex) {
